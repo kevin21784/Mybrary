@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 
 const indexRouters = require('./routes/index') 
 const authorRouters = require('./routes/authors')
+const bookRouters = require('./routes/books')
 
 app.set('view engine','ejs')
 app.set('views',__dirname+'/views')
@@ -26,3 +27,4 @@ mongoose.connect('mongodb://localhost/mybrary',{
 app.listen(process.env.PORT || 2000)
 app.use('/', indexRouters)
 app.use('/authors' , authorRouters)
+app.use('/books' , bookRouters)
